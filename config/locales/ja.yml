@@ -15,7 +15,7 @@ ja:
       word:
         id: ID
         name: 名称
-        class: 品詞
+        word_class: 品詞
         meaning: 意味
         created_at: 登録日時
         updated_at: 更新日時
