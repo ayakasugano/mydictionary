@@ -1,2 +1,16 @@
-h1 Words#new
-p Find me in app/views/words/new.html.slim
+h1 単語の新規登録
+
+.nav.justify-content-end
+  = link_to '一覧', words_path, class: 'nav-link'
+
+= form_with model: @words, local:true do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control', id: 'word_name'
+  .form-group
+    = f.label :word_class
+    = f.select :word_class, Word.word_classes.invert, include_blank: "選択してください", id: 'word_class'
+  .form-group
+    = f.label :meaning
+    = f.text_field :meaning, class: 'form-control', id: 'word-meaning'
+  = f.submit nil, class: 'btn btn-primary'
