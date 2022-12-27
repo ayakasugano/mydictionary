@@ -47,6 +47,8 @@ gem "html2slim"
 
 gem "bootstrap"
 
+gem 'enum_help'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
