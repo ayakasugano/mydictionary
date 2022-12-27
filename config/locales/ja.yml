@@ -19,6 +19,13 @@ ja:
         meaning: 意味
         created_at: 登録日時
         updated_at: 更新日時
+  enums:
+    word:
+      word_class:
+        noun: 名詞
+        verb: 動詞
+        adjective: 形容詞
+        adverb: 副詞
   date:
     abbr_day_names:
     - 日
