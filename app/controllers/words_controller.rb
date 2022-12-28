@@ -21,9 +21,15 @@ class WordsController < ApplicationController
   end
 
   def update
-    word = Word.find(params[:id])
-    word.update!(word_params)
-    redirect_to words_url, notice: "#{word.name}を更新しました。"
+    @word = Word.find(params[:id])
+    @word.update!(word_params)
+    redirect_to words_url, notice: "#{@word.name}を更新しました。"
+  end
+
+  def destroy
+    @word = Word.find(params[:id])
+    @word.destroy
+    redirect_to words_url, notice: "#{@word.name}を削除しました。", status: :see_other
   end
 
   private

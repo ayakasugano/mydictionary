@@ -19,3 +19,4 @@ table.table.table-hover
         td = word.created_at
         td
           = link_to '編集', edit_word_path(word), class: 'btn btn-primary mr-3'
+          = link_to '削除', word, data: { turbo_method: :delete, turbo_confirm: "#{word.name}を削除します。よろしいですか？" }, class: 'btn btn-danger'
