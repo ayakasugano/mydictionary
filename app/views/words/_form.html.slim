@@ -1,0 +1,11 @@
+= form_with model: word, local:true do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control', id: 'word_name'
+  .form-group
+    = f.label :word_class
+    = f.select :word_class, Word.word_classes_i18n.invert, include_blank: "選択してください", id: 'word_class'
+  .form-group
+    = f.label :meaning
+    = f.text_field :meaning, class: 'form-control', id: 'word-meaning'
+  = f.submit nil, class: 'btn btn-primary'

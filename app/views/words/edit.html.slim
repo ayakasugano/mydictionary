@@ -1,2 +1,6 @@
-h1 Words#edit
-p Find me in app/views/words/edit.html.slim
+h1 英単語の更新
+
+.nav.justify-content-end
+  = link_to '一覧', words_path, class: 'nav-link'
+
+=render partial: 'form', locals: { word: @word }

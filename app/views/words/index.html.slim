@@ -1,3 +1,21 @@
 h1 英単語一覧
 
 = link_to '新規登録', new_word_path, class: 'btn btn-primary'
+
+.mb-3
+table.table.table-hover
+  thead.thead-default
+    tr
+      th = Word.human_attribute_name(:name)
+      th = Word.human_attribute_name(:word_class)
+      th = Word.human_attribute_name(:meaning)
+      th = Word.human_attribute_name(:created_at)
+  tbody
+    - @words.each do |word|
+      tr
+        td = word.name
+        td = word.word_class_i18n
+        td = word.meaning
+        td = word.created_at
+        td
+          = link_to '編集', edit_word_path(word), class: 'btn btn-primary mr-3'
