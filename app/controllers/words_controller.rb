@@ -1,6 +1,7 @@
 class WordsController < ApplicationController
   def index
     @words = Word.all
+    @modify_text = modify_text(Word.where('created_at >= ?', Date.today))
   end
 
   def show
@@ -36,6 +37,24 @@ class WordsController < ApplicationController
 
   def word_params
     params.require(:word).permit(:name, :word_class, :meaning)
+  end
+
+  def modify_text(words_created_at_today)
+    return "なし" if words_created_at_today.empty?
+      
+    texts = ""
+    
+    words_created_at_today.each do |word|
+      texts += "|"
+      texts += " " + word.name + " "
+      texts += "|"
+      texts += " " + word.word_class_i18n +  " "
+      texts += "|"
+      texts +=  " " + word.meaning +  " "
+      texts += "|"
+      texts += "\n"
+    end
+    return texts
   end
 
 end

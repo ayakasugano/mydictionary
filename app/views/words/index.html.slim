@@ -1,6 +1,10 @@
 h1 英単語一覧
+div
+  = link_to '新規登録', new_word_path, class: 'btn btn-primary'
+div
+  h3 ↓貼り付け用
+  textarea = @modify_text
 
-= link_to '新規登録', new_word_path, class: 'btn btn-primary'
 
 .mb-3
 table.table.table-hover
